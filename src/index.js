@@ -7,4 +7,4 @@ const fetchUser = username => {
 
 const medium = { fetchUser }
 
-export { medium }
+export default medium

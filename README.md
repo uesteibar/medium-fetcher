@@ -25,7 +25,7 @@ npm install -S medium-fetcher
 ## Usage
 
 ```js
-import { medium } from 'medium-fetcher'
+import medium from 'medium-fetcher'
 
 // to fetch a user
 medium.fetchUser(username).then(
