@@ -1,0 +1,54 @@
+{
+  "name": "medium-fetcher",
+  "version": "0.0.0",
+  "description": "Simple scrapper for medium",
+  "main": "lib/index.js",
+  "scripts": {
+    "prettier": "prettier --single-quote --write --jsx-bracket-same-line index.js 'src/**/*.js'",
+    "lint": "npm run prettier && eslint 'src/**/*.js' --fix",
+    "lint:staged": "lint-staged",
+    "test": "",
+    "build": "rm -rf lib/* && babel src -d lib --ignore spec.js,__snapshots__",
+    "prerelease": "npm run build",
+    "release": "standard-version && git push --follow-tags origin master; npm publish"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --single-quote --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "pre-commit": "lint:staged",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "author": "Unai Esteibar <uesteibar@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "got": "6.x.x"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-eslint": "7.2.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-1": "6.22.0",
+    "eslint": "3.18.0",
+    "eslint-config-prettier": "1.5.0",
+    "eslint-config-standard": "7.1.0",
+    "eslint-plugin-prettier": "2.0.1",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-react": "6.10.3",
+    "eslint-plugin-standard": "2.1.1",
+    "lint-staged": "3.4.0",
+    "pre-commit": "1.2.2",
+    "prettier": "0.22.0",
+    "standard-version": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uesteibar/medium-fetcher-js.git"
+  }
+}
