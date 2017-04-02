@@ -12,12 +12,10 @@ class UserFetcher {
 
   fetch = () => {
     return got(this.url())
-      .then(response => JSON.parse(response.body.slice(16)))
-      .then(response => response.payload.user)
-      .then(user => {
-        const parser = new UserParser(this.options)
-        return parser.parse(user)
-        
+      .then(response => JSON.parse(response.body.slice(16)).payload)
+      .then(payload => {
+        const parser = new UserParser(payload, this.options)
+        return parser.parse()
       })
   };
 }
