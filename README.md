@@ -28,7 +28,8 @@ npm install -S medium-fetcher
 import medium from 'medium-fetcher'
 
 // to fetch a user
-medium.fetchUser(username).then(
+const username = 'uesteibar'
+medium.fetchUser({ username }).then(
   (user) => console.log({ user })
 )
 ```

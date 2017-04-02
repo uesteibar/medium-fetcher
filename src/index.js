@@ -1,7 +1,7 @@
-import UserFetcher from './services/UserFetcher'
+import UserFetcher from './services/fetchers/UserFetcher'
 
-const fetchUser = username => {
-  const service = new UserFetcher(username)
+const fetchUser = options => {
+  const service = new UserFetcher(options)
   return service.fetch()
 }
 
