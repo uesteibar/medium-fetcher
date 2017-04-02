@@ -10,6 +10,7 @@ class UserParser {
       username: user.name,
       bio: user.bio,
       twitterHandle: user.twitterScreenName,
+      avatar: `https://cdn-images-1.medium.com/fit/c/200/200/${user.imageId}`,
     }
   };
 }
